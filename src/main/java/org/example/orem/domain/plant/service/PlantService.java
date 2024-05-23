@@ -13,7 +13,7 @@ public class PlantService {
     private final PlantRepository plantRepository;
 
     public PlantResponse getPlantByBirth(int requestMonth) {
-        Plant plant = plantRepository.findByBloomingSeason(requestMonth).orElseThrow();
+        Plant plant = plantRepository.findAllByBloomingSeason(requestMonth).get(0);
         return PlantResponse.builder()
             .plantName(plant.getPlantName())
             .bloomingSeason(plant.getBloomingSeason())
