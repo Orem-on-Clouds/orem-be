@@ -19,7 +19,6 @@ public class OremCsvWriter implements ItemWriter<OremCSVDto> {
 
     @Override
     public void write(Chunk<? extends OremCSVDto> chunk) throws Exception {
-        log.info("[Write] do write");
         List<Orem> orems = new ArrayList<>();
         chunk.forEach(oremCSVDTO -> {
             Orem orem = Orem.builder()

@@ -21,7 +21,6 @@ public class EntireOremCsvWriter implements ItemWriter<EntireOremCsvDto> {
     public void write(Chunk<? extends EntireOremCsvDto> chunk) throws Exception {
         List<EntireOrem> eOrems = new ArrayList<>();
         chunk.forEach(dto ->{
-            log.info(dto.getPlaceName());
             EntireOrem entireOrem = EntireOrem.builder()
                 .name(dto.getPlaceName())
                 .build();

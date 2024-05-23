@@ -17,7 +17,6 @@ public class OremCsvReader {
 
     @Bean
     public FlatFileItemReader<OremCSVDto> oremCsvFileItemReader() {
-        log.info("[READER] START!!");
         /* file read */
         FlatFileItemReader<OremCSVDto> flatFileItemReader = new FlatFileItemReader<>();
 //        flatFileItemReader.setResource(new ClassPathResource("/csv/food.csv"));
