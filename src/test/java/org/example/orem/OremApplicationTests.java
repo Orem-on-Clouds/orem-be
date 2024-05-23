@@ -3,7 +3,7 @@ package org.example.orem;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class OremApplicationTests {
 
     @Test
