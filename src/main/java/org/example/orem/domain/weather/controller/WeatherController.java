@@ -1,7 +1,11 @@
 package org.example.orem.domain.weather.controller;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.Proxy.Type;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +24,14 @@ public class WeatherController {
 
     private RestTemplate restTemplate;
 
-    public WeatherController() {
-        this.restTemplate = new RestTemplate();
-    }
+
 
     @GetMapping
     public Map<String, Object> getWeather() {
+        Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("krmp-proxy.9rum.cc", 3128));
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setProxy(proxy);
+        restTemplate = new RestTemplate(requestFactory);
         String url = String.format("%s?lat=%f&lon=%f&appid=%s&units=%s", API_URL, lat, lon, API_KEY, units);
         return restTemplate.getForObject(url, Map.class);
     }
