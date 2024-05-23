@@ -62,6 +62,7 @@ public class OremService {
             .keywords(convertToList(orem.getKeyword()))
             .imageUrl(orem.getImageUrl())
             .description(orem.getDescription())
+            .season(orem.getSeason())
             .build();
     }
 
