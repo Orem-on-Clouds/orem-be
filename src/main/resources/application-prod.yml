@@ -27,3 +27,4 @@ logging:
   level:
     '[com.example.kakao]': INFO
     '[org.hibernate.type]': TRACE
+weather-api-key: dfed1ea9045e4a9448554dda6662f76d
