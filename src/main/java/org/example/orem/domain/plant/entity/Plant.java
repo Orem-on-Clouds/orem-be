@@ -35,7 +35,7 @@ public class Plant {
     @Column(name = "image_url")
     private String imageUrl;
     @Column(length = 1000)
-    private String desc;
+    private String description;
 
 
     @Builder
@@ -43,7 +43,7 @@ public class Plant {
         String plantingLocation, String distribution, Season floweringPeriod, String height,
         String leafCharacteristics, int bloomingSeason, String bloomingDetails,
         String stemCharacteristics, String hardiness, String utilization, String imageUrl,
-        String desc) {
+        String description) {
         this.plantName = plantName;
         this.scientificName = scientificName;
         this.familyName = familyName;
@@ -59,6 +59,6 @@ public class Plant {
         this.hardiness = hardiness;
         this.utilization = utilization;
         this.imageUrl = imageUrl;
-        this.desc = desc;
+        this.description = description;
     }
 }

@@ -50,7 +50,7 @@ public class OremService {
             .placeUrl(orem.getPlaceUrl())
             .keywords(convertToList(orem.getKeyword()))
             .imageUrl(orem.getImageUrl())
-            .desc(orem.getDesc())
+            .description(orem.getDescription())
             .build();
 
     }

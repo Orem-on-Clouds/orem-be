@@ -10,7 +10,7 @@ public record ResponseOremBySeason(
     String placeUrl,
     List<String> keywords,
     String imageUrl,
-    String desc
+    String description
 ) {
 
 }

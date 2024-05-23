@@ -22,5 +22,5 @@ public class PlantCSVDto {
     private String hardiness;
     private String utilization;
     private String image_url;
-    private String desc;
+    private String description;
 }

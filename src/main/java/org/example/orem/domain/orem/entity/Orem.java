@@ -36,11 +36,11 @@ public class Orem {
 
     private String imageUrl;
 
-    private String desc;
+    private String description;
 
     @Builder
     public Orem(String name, String city, String location, String address, Double longitude,
-        Double latitude, String placeUrl, String keyword, String imageUrl, String desc) {
+        Double latitude, String placeUrl, String keyword, String imageUrl, String description) {
         this.name = name;
         this.city = city;
         this.location = location;
@@ -50,7 +50,7 @@ public class Orem {
         this.placeUrl = placeUrl;
         this.keyword = keyword;
         this.imageUrl = imageUrl;
-        this.desc = desc;
+        this.description = description;
     }
 
 }

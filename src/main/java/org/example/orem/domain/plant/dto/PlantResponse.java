@@ -10,7 +10,7 @@ public record PlantResponse(
     String distribution,
     String floweringPeriod,
     String height,
-    String desc,
+    String description,
     String imageUrl
     ) {
 

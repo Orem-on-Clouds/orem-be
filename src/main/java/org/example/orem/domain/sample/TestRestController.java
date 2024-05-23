@@ -1,4 +1,4 @@
-package org.example.orem.domain.smaple;
+package org.example.orem.domain.sample;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

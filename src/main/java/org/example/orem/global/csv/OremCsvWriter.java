@@ -32,7 +32,7 @@ public class OremCsvWriter implements ItemWriter<OremCSVDto> {
                 .placeUrl(oremCSVDTO.getPlaceUrl())
                 .keyword(oremCSVDTO.getKeyword())
                 .imageUrl(oremCSVDTO.getImageUrl())
-                .desc(oremCSVDTO.getDesc())
+                .description(oremCSVDTO.getDescription())
                 .build();
             orems.add(orem);
         });

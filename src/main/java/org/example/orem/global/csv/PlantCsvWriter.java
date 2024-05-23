@@ -40,7 +40,7 @@ public class PlantCsvWriter implements ItemWriter<PlantCSVDto> {
                 .hardiness(dto.getHardiness())
                 .utilization(dto.getUtilization())
                 .imageUrl(dto.getImage_url())
-                .desc(dto.getDesc())
+                .description(dto.getDescription())
                 .build();
             plants.add(plant);
         });

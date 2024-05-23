@@ -29,7 +29,10 @@ public class PlantCSVReader {
         /* delimitedLineTokenizer : setNames를 통해 각각의 데이터의 이름 설정 */
         DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer(",");
 
-        delimitedLineTokenizer.setNames("plantName", "scientificName" ,"familyName","nameOrigin","plantingLocation","distribution","floweringPeriod","height","leafCharacteristics","bloomingSeason","bloomingDetails","stemCharacteristics","hardiness","utilization","image_url","desc");
+        delimitedLineTokenizer.setNames("plantName", "scientificName", "familyName", "nameOrigin",
+            "plantingLocation", "distribution", "floweringPeriod", "height", "leafCharacteristics",
+            "bloomingSeason", "bloomingDetails", "stemCharacteristics", "hardiness", "utilization",
+            "image_url", "description");
         defaultLineMapper.setLineTokenizer(delimitedLineTokenizer);
 
         /* beanWrapperFieldSetMapper : Tokenizer에서 가지고온 데이터들을 VO로 바인드하는 역할 */

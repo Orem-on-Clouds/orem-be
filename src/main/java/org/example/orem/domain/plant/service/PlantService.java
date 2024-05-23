@@ -20,7 +20,7 @@ public class PlantService {
             .distribution(plant.getDistribution())
             .floweringPeriod(plant.getFloweringPeriod().getValue())
             .height(plant.getHeight())
-            .desc(plant.getDesc())
+            .description(plant.getDescription())
             .imageUrl(plant.getImageUrl())
             .build();
 
