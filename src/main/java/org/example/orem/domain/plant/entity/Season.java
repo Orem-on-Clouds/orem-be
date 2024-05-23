@@ -12,6 +12,9 @@ public enum Season {
         this.value = value;
     }
 
+    public String getValue(){
+        return this.value;
+    }
     public static Season of(String value){
         return switch (value){
             case "봄" -> Season.SPRING;

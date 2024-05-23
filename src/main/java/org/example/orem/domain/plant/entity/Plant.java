@@ -6,21 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
 @NoArgsConstructor
 public class Plant {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String plantName;
-
     private String scientificName;
     private String familyName;
     private String nameOrigin;
-
     private String plantingLocation;
     private String distribution;
     private Season floweringPeriod;
@@ -31,7 +31,7 @@ public class Plant {
     private String stemCharacteristics;
     private String hardiness;
     private String utilization;
-    @Column(name="image_url")
+    @Column(name = "image_url")
     private String imageUrl;
     private String desc;
 
