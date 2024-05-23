@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/orem")
+@RequestMapping("/api/orem")
 public class OremController {
 
     private final OremService oremService;

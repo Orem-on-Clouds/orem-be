@@ -5,6 +5,7 @@ import lombok.Builder;
 
 @Builder
 public record ResponseOremBySeason(
+    Long id,
     String name,
     String city,
     String placeUrl,
