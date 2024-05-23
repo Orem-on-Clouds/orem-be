@@ -19,6 +19,7 @@ public class Plant {
     private Long id;
     private String plantName;
     private String scientificName;
+    @Column(length = 1000)
     private String familyName;
     private String nameOrigin;
     private String plantingLocation;
@@ -33,6 +34,7 @@ public class Plant {
     private String utilization;
     @Column(name = "image_url")
     private String imageUrl;
+    @Column(length = 1000)
     private String desc;
 
 
