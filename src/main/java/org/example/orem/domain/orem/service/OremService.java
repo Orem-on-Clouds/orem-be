@@ -58,11 +58,11 @@ public class OremService {
             .id(orem.getId())
             .name(orem.getName())
             .city(orem.getCity())
+            .season(orem.getSeason())
             .placeUrl(orem.getPlaceUrl())
             .keywords(convertToList(orem.getKeyword()))
             .imageUrl(orem.getImageUrl())
             .description(orem.getDescription())
-            .season(orem.getSeason())
             .build();
     }
 
@@ -101,6 +101,7 @@ public class OremService {
     private int generateIdx(int maxSize) {
         Random random = new Random();
         return random.nextInt(maxSize);
+
     }
 
 }
