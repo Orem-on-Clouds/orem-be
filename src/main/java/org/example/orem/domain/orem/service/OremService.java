@@ -1,9 +1,14 @@
 package org.example.orem.domain.orem.service;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.orem.domain.orem.dto.ResponseOremAndPlantByBirth;
+import org.example.orem.domain.orem.dto.ResponseOremBySeason;
 import org.example.orem.domain.orem.entity.EntireOrem;
+import org.example.orem.domain.orem.entity.Orem;
 import org.example.orem.domain.orem.repository.EntireOremRepository;
 import org.example.orem.domain.orem.repository.OremRepository;
 import org.example.orem.domain.plant.dto.PlantResponse;
@@ -34,7 +39,29 @@ public class OremService {
             .build();
     }
 
-    private String makeSuggestSentence(String adjective, String plantName, String oremName) {
-        return "당신은 " + adjective + " " + plantName + "이(가) 자라나고 있는 " + oremName + "이에요.";
+    public ResponseOremBySeason recommendedBySeason(String season){
+        long length = oremRepository.count();
+        long idx = generateIdx(length);
+        Orem orem =  oremRepository.findById(idx).orElseThrow();
+
+        return ResponseOremBySeason.builder()
+            .name(orem.getName())
+            .city(orem.getCity())
+            .placeUrl(orem.getPlaceUrl())
+            .keywords(convertToList(orem.getKeyword()))
+            .imageUrl(orem.getImageUrl())
+            .desc(orem.getDesc())
+            .build();
+
     }
+
+    private List<String> convertToList(String keyword) {
+        return Arrays.asList(keyword.split(","));
+    }
+
+    private long generateIdx(long maxSize) {
+        Random random = new Random();
+        return random.nextLong(maxSize) + 1;
+    }
+
 }

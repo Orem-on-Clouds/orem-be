@@ -2,6 +2,7 @@ package org.example.orem.domain.orem.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.orem.domain.orem.dto.ResponseOremAndPlantByBirth;
+import org.example.orem.domain.orem.dto.ResponseOremBySeason;
 import org.example.orem.domain.orem.service.OremService;
 import org.example.orem.global.utils.ResponseDTO;
 import org.springframework.http.HttpStatus;
@@ -23,8 +24,15 @@ public class OremController {
         @RequestParam(name="month", defaultValue = "1") int month,
         @RequestParam(name="day", defaultValue = "1") int day
     ){
-        ResponseOremAndPlantByBirth response = oremService.suggestOremByBirth(month, day);
         return ResponseEntity.status(HttpStatus.OK)
-            .body(ResponseDTO.res(HttpStatus.OK, response));
+            .body(ResponseDTO.res(HttpStatus.OK, oremService.suggestOremByBirth(month, day)));
+    }
+
+    @GetMapping("/recommend")
+    public ResponseEntity<ResponseDTO<ResponseOremBySeason>> recommendedBySeason(
+        @RequestParam(name="season", defaultValue = "봄") String season
+    ){
+        return ResponseEntity.status(HttpStatus.OK).body(ResponseDTO.res(HttpStatus.OK,
+            oremService.recommendedBySeason(season)));
     }
 }

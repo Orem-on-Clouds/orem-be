@@ -21,7 +21,9 @@ public class Orem {
     private String name;
 
     private String city;
+
     private String location;
+
     private String address;
 
     private Double longitude;
@@ -31,7 +33,9 @@ public class Orem {
     private String placeUrl;
 
     private String keyword;
+
     private String imageUrl;
+
     private String desc;
 
     @Builder
