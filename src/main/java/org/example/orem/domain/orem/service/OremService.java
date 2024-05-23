@@ -49,9 +49,10 @@ public class OremService {
     }
 
     public ResponseOremBySeason recommendedBySeason(String season) {
-        long length = oremRepository.count();
-        long idx = generateIdx(length);
-        Orem orem = oremRepository.findById(idx).orElseThrow();
+        List<Orem> orems = oremRepository.findAllBySeason(season);
+        int length = orems.size();
+        int idx = generateIdx(length);
+        Orem orem = orems.get(idx);
 
         return ResponseOremBySeason.builder()
             .id(orem.getId())
@@ -82,6 +83,7 @@ public class OremService {
             infos.add(OremSimpleInfo.builder()
                 .oremId(likeOrem.getOrem().getId())
                 .name(likeOrem.getOrem().getName())
+                .season(likeOrem.getOrem().getSeason())
                 .build());
         });
 
@@ -89,16 +91,15 @@ public class OremService {
             .count(likeOrems.size())
             .orems(infos)
             .build();
-
     }
 
     private List<String> convertToList(String keyword) {
         return Arrays.asList(keyword.split(","));
     }
 
-    private long generateIdx(long maxSize) {
+    private int generateIdx(int maxSize) {
         Random random = new Random();
-        return random.nextLong(maxSize) + 1;
+        return random.nextInt(maxSize);
     }
 
 }

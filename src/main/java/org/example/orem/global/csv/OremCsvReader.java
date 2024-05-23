@@ -31,7 +31,7 @@ public class OremCsvReader {
         DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer(",");
 //        delimitedLineTokenizer.setNames("id", "name");
         delimitedLineTokenizer.setNames("name", "city", "location", "addressJibun", "longitude",
-            "latitude", "placeUrl", "keywords", "imageUrl", "description");
+            "latitude", "placeUrl", "keywords", "imageUrl", "description", "season");
         defaultLineMapper.setLineTokenizer(delimitedLineTokenizer);
 
         /* beanWrapperFieldSetMapper : Tokenizer에서 가지고온 데이터들을 VO로 바인드하는 역할 */

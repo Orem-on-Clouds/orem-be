@@ -5,7 +5,8 @@ import lombok.Builder;
 @Builder
 public record OremSimpleInfo(
     Long oremId,
-    String name
+    String name,
+    String season
 ) {
 
 }

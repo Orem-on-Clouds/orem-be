@@ -16,4 +16,5 @@ public class OremCSVDto {
     private String keyword;
     private String imageUrl;
     private String description;
+    private String season;
 }

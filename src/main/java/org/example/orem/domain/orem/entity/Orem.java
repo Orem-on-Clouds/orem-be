@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.orem.domain.plant.entity.Season;
 
 @Entity
 @Getter
@@ -36,10 +37,11 @@ public class Orem {
     private String imageUrl;
 
     private String description;
+    private String season;
 
     @Builder
     public Orem(String name, String city, String location, String address, Double longitude,
-        Double latitude, String placeUrl, String keyword, String imageUrl, String description) {
+        Double latitude, String placeUrl, String keyword, String imageUrl, String description, String season) {
         this.name = name;
         this.city = city;
         this.location = location;
@@ -50,6 +52,7 @@ public class Orem {
         this.keyword = keyword;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.season = season;
     }
 
 }

@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.orem.domain.orem.entity.Orem;
 import org.example.orem.domain.orem.repository.OremRepository;
+import org.example.orem.domain.plant.entity.Season;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +33,7 @@ public class OremCsvWriter implements ItemWriter<OremCSVDto> {
                 .keyword(oremCSVDTO.getKeyword())
                 .imageUrl(oremCSVDTO.getImageUrl())
                 .description(oremCSVDTO.getDescription())
+                .season(oremCSVDTO.getSeason())
                 .build();
             orems.add(orem);
         });
