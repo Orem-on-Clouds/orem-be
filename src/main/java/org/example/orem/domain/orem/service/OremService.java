@@ -70,10 +70,6 @@ public class OremService {
         Member member = memberService.getMember(memberUUID);
         Orem orem = oremRepository.findById(oremId).orElseThrow();
 
-        if (likeOremRepository.findByMemberAndOrem(member, orem)) {
-            return;
-        }
-
         likeOremRepository.save(LikeOrem.builder()
             .member(member)
             .orem(orem)
