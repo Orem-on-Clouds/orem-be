@@ -52,6 +52,13 @@ public class OremController {
     ) {
         return ResponseEntity.status(HttpStatus.OK)
             .body(ResponseDTO.res(HttpStatus.OK, oremService.getLikeOremList(memberUUID)));
+    }
 
+    @GetMapping("/detail")
+    public ResponseEntity<ResponseDTO<ResponseOremBySeason>> getOremDetail(
+        @RequestParam(name = "oremId") Long oremId
+    ) {
+        return ResponseEntity.status(HttpStatus.OK)
+            .body(ResponseDTO.res(HttpStatus.OK, oremService.getDetail(oremId)));
     }
 }

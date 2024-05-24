@@ -94,6 +94,20 @@ public class OremService {
             .build();
     }
 
+    public ResponseOremBySeason getDetail(Long oremId) {
+        Orem orem = oremRepository.findById(oremId).orElseThrow();
+        return ResponseOremBySeason.builder()
+            .id(orem.getId())
+            .name(orem.getName())
+            .city(orem.getCity())
+            .placeUrl(orem.getPlaceUrl())
+            .keywords(convertToList(orem.getKeyword()))
+            .imageUrl(orem.getImageUrl())
+            .description(orem.getDescription())
+            .season(orem.getSeason())
+            .build();
+    }
+
     private List<String> convertToList(String keyword) {
         return Arrays.asList(keyword.split(","));
     }

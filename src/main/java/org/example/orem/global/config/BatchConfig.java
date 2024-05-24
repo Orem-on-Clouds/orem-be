@@ -38,10 +38,9 @@ public class BatchConfig {
     private static final int chunkSize = 50;
 
     @Bean
-    public Job csvFileItemReaderJob(JobRepository jobRepository, Step oremCsvFileItemReaderStep,
+    public Job csvFileToDBJob(JobRepository jobRepository, Step oremCsvFileItemReaderStep,
         Step plantCsvFileItemReaderStep, Step entireOremFileItemReaderStep) {
-        log.info("Configuring Job: csvFileItemReaderJob");
-        return new JobBuilder("csvFileItemReaderJob", jobRepository)
+        return new JobBuilder("csvFileToDBJob", jobRepository)
             .start(oremCsvFileItemReaderStep)
             .next(plantCsvFileItemReaderStep)
             .next(entireOremFileItemReaderStep)
