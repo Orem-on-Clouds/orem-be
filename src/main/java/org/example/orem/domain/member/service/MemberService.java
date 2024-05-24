@@ -17,7 +17,7 @@ public class MemberService {
 
     public void register(String nickname, String uuid) {
         if (memberRepository.existsByUuid(uuid)) {
-            return;
+            throw new RuntimeException();
         }
         memberRepository.save(Member.builder()
             .nickname(nickname)
