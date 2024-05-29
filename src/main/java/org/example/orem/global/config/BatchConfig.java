@@ -21,22 +21,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
-@Slf4j
 @Configuration
 @RequiredArgsConstructor
 public class BatchConfig {
-
-    private final OremCsvReader oremCsvReader;
-    private final OremCsvWriter oremCsvWriter;
-    private final PlantCSVReader plantCsvReader;
-    private final PlantCsvWriter plantCsvWriter;
-    private final EntireOremCsvReader entireOremCsvReader;
-    private final EntireOremCsvWriter entireOremCsvWriter;
-
-    private final PlatformTransactionManager transactionManager;
-
-    private static final int chunkSize = 50;
-
+//
+//    private final OremCsvReader oremCsvReader;
+//    private final OremCsvWriter oremCsvWriter;
+//    private final PlantCSVReader plantCsvReader;
+//    private final PlantCsvWriter plantCsvWriter;
+//    private final EntireOremCsvReader entireOremCsvReader;
+//    private final EntireOremCsvWriter entireOremCsvWriter;
+//
+//    private final PlatformTransactionManager transactionManager;
+//
+//    private static final int chunkSize = 50;
+//
 //    @Bean
 //    public Job csvFileToDBJob(JobRepository jobRepository, Step oremCsvFileItemReaderStep,
 //        Step plantCsvFileItemReaderStep, Step entireOremFileItemReaderStep) {
@@ -46,7 +45,7 @@ public class BatchConfig {
 //            .next(entireOremFileItemReaderStep)
 //            .build();
 //    }
-
+//
 //    @Bean
 //    public Step oremCsvFileItemReaderStep(JobRepository jobRepository) {
 //        return new StepBuilder("oremCsvFileItemReaderStep", jobRepository)
@@ -56,8 +55,8 @@ public class BatchConfig {
 //            .allowStartIfComplete(Boolean.TRUE)
 //            .build();
 //    }
-
-
+//
+//
 //    @Bean
 //    public Step plantCsvFileItemReaderStep(JobRepository jobRepository) {
 //        return new StepBuilder("plantCsvFileItemReaderStep", jobRepository)
