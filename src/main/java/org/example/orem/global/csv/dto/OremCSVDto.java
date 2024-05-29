@@ -1,4 +1,4 @@
-package org.example.orem.global.csv;
+package org.example.orem.global.csv.dto;
 
 import lombok.Getter;
 import lombok.Setter;

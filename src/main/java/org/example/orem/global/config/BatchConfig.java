@@ -3,13 +3,13 @@ package org.example.orem.global.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.orem.global.csv.EntireOremCsvDto;
+import org.example.orem.global.csv.dto.EntireOremCsvDto;
 import org.example.orem.global.csv.EntireOremCsvReader;
 import org.example.orem.global.csv.EntireOremCsvWriter;
-import org.example.orem.global.csv.OremCSVDto;
+import org.example.orem.global.csv.dto.OremCSVDto;
 import org.example.orem.global.csv.OremCsvReader;
 import org.example.orem.global.csv.OremCsvWriter;
-import org.example.orem.global.csv.PlantCSVDto;
+import org.example.orem.global.csv.dto.PlantCSVDto;
 import org.example.orem.global.csv.PlantCSVReader;
 import org.example.orem.global.csv.PlantCsvWriter;
 import org.springframework.batch.core.Job;
@@ -37,46 +37,45 @@ public class BatchConfig {
 
     private static final int chunkSize = 50;
 
-    @Bean
-    public Job csvFileToDBJob(JobRepository jobRepository, Step oremCsvFileItemReaderStep,
-        Step plantCsvFileItemReaderStep, Step entireOremFileItemReaderStep) {
-        return new JobBuilder("csvFileToDBJob", jobRepository)
-            .start(oremCsvFileItemReaderStep)
-            .next(plantCsvFileItemReaderStep)
-            .next(entireOremFileItemReaderStep)
-            .build();
-    }
+//    @Bean
+//    public Job csvFileToDBJob(JobRepository jobRepository, Step oremCsvFileItemReaderStep,
+//        Step plantCsvFileItemReaderStep, Step entireOremFileItemReaderStep) {
+//        return new JobBuilder("csvFileToDBJob", jobRepository)
+//            .start(oremCsvFileItemReaderStep)
+//            .next(plantCsvFileItemReaderStep)
+//            .next(entireOremFileItemReaderStep)
+//            .build();
+//    }
 
-    @Bean
-    public Step oremCsvFileItemReaderStep(JobRepository jobRepository) {
-        return new StepBuilder("oremCsvFileItemReaderStep", jobRepository)
-            .<OremCSVDto, OremCSVDto>chunk(chunkSize, transactionManager)
-            .reader(oremCsvReader.oremCsvFileItemReader())
-            .writer(oremCsvWriter)
-            .allowStartIfComplete(Boolean.TRUE)
-            .build();
-    }
+//    @Bean
+//    public Step oremCsvFileItemReaderStep(JobRepository jobRepository) {
+//        return new StepBuilder("oremCsvFileItemReaderStep", jobRepository)
+//            .<OremCSVDto, OremCSVDto>chunk(chunkSize, transactionManager)
+//            .reader(oremCsvReader.oremCsvFileItemReader())
+//            .writer(oremCsvWriter)
+//            .allowStartIfComplete(Boolean.TRUE)
+//            .build();
+//    }
 
 
-    @Bean
-    public Step plantCsvFileItemReaderStep(JobRepository jobRepository) {
-        log.info("[PLANT WRITE]");
-        return new StepBuilder("plantCsvFileItemReaderStep", jobRepository)
-            .<PlantCSVDto, PlantCSVDto>chunk(chunkSize, transactionManager)
-            .reader(plantCsvReader.plantCsvFileItemReader())
-            .writer(plantCsvWriter)
-            .allowStartIfComplete(Boolean.TRUE)
-            .build();
-    }
-
-    @Bean
-    public Step entireOremFileItemReaderStep(JobRepository jobRepository) {
-        return new StepBuilder("entireOremFileItemReaderStep", jobRepository)
-            .<EntireOremCsvDto, EntireOremCsvDto>chunk(chunkSize+100, transactionManager)
-            .reader(entireOremCsvReader.entireOremCsvDtoFlatFileItemReader())
-            .writer(entireOremCsvWriter)
-            .allowStartIfComplete(Boolean.TRUE)
-            .build();
-    }
+//    @Bean
+//    public Step plantCsvFileItemReaderStep(JobRepository jobRepository) {
+//        return new StepBuilder("plantCsvFileItemReaderStep", jobRepository)
+//            .<PlantCSVDto, PlantCSVDto>chunk(chunkSize, transactionManager)
+//            .reader(plantCsvReader.plantCsvFileItemReader())
+//            .writer(plantCsvWriter)
+//            .allowStartIfComplete(Boolean.TRUE)
+//            .build();
+//    }
+//
+//    @Bean
+//    public Step entireOremFileItemReaderStep(JobRepository jobRepository) {
+//        return new StepBuilder("entireOremFileItemReaderStep", jobRepository)
+//            .<EntireOremCsvDto, EntireOremCsvDto>chunk(chunkSize+100, transactionManager)
+//            .reader(entireOremCsvReader.entireOremCsvDtoFlatFileItemReader())
+//            .writer(entireOremCsvWriter)
+//            .allowStartIfComplete(Boolean.TRUE)
+//            .build();
+//    }
 
 }

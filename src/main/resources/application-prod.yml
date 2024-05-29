@@ -6,10 +6,10 @@ server:
   port: 8080
 spring:
   datasource:
-    url: ${DATABASE_URL}?allowPublicKeyRetrieval=true&useSSL=false
-    driver-class-name: org.mariadb.jdbc.Driver
+    url: ${{secrets.DATABASE_URL}}/oruem?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: root
+    password: oreum_1004
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create
@@ -25,6 +25,4 @@ spring:
 
 logging:
   level:
-    '[com.example.kakao]': INFO
     '[org.hibernate.type]': TRACE
-weather-api-key: dfed1ea9045e4a9448554dda6662f76d

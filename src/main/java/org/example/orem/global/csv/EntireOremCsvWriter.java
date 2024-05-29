@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.orem.domain.orem.entity.EntireOrem;
 import org.example.orem.domain.orem.repository.EntireOremRepository;
+import org.example.orem.global.csv.dto.EntireOremCsvDto;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,7 @@
 package org.example.orem.global.csv;
 
 import lombok.RequiredArgsConstructor;
+import org.example.orem.global.csv.dto.EntireOremCsvDto;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;

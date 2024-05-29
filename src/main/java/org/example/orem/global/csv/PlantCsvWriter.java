@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.orem.domain.plant.entity.Plant;
 import org.example.orem.domain.plant.entity.Season;
 import org.example.orem.domain.plant.repository.PlantRepository;
+import org.example.orem.global.csv.dto.PlantCSVDto;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Configuration;
