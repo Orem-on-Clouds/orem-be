@@ -7,6 +7,7 @@ server:
 spring:
   datasource:
     url: ${{secrets.DATABASE_URL}}/oruem?allowPublicKeyRetrieval=true&useSSL=false
+#    url: jdbc:mysql://34.64.172.19:3306/oruem?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: oreum_1004
     driver-class-name: com.mysql.cj.jdbc.Driver

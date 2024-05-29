@@ -12,6 +12,7 @@ COPY . .
 # gradlew를 이용한 프로젝트 필드
 RUN ./gradlew clean build
 
+EXPOSE 8080
 
 # 빌드 결과 jar 파일을 실행
 CMD ["java", "-jar", "-Dspring.profiles.active=prod", "/home/gradle/project/build/libs/orem-0.0.1-SNAPSHOT.jar"]
